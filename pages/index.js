@@ -1,7 +1,7 @@
 const index = () => {
   return (
-    <div className="bg-red-500">
-      <h1 className="text-black-500">it work</h1>
+    <div className="bg-red-500 text-center">
+      <h1 className="text-black">it work</h1>
     </div>
   );
 };
