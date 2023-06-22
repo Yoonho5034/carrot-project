@@ -6,7 +6,7 @@ const Enter = () => {
   const onPhoneClick = () => setMethod("phone");
 
   return (
-    <div className="mt-16">
+    <div className="mt-16 px-4">
       <h3 className="text-3xl font-bold text-center">Enter to Carrot</h3>
       <div className="mt-16">
         <div className="flex flex-col items-center">
@@ -34,34 +34,32 @@ const Enter = () => {
             </button>
           </div>
         </div>
-        <form>
-          <label>
+        <form className="flex flex-col">
+          <label className="mt-8 font-bold text-gray-500 text-sm">
             {method === "email" ? "Email address" : null}
             {method === "phone" ? "Phone number" : null}
           </label>
           <div>
-            {method === "email" ? <input type="email" required /> : null}
-            {method === "phone" ? (
-              <div>
-                <span>+82</span>
-                <input type="number" required />
-              </div>
-            ) : null}
+            <input
+              type={method === "email" ? method : "number"}
+              required
+              className="appearance-none mt-2 w-full px-3 rounded-lg border-gray-300 shadow-md placeholder-gray-400 focus:outline-none focus:ring-orange-400 focus:border-orange-400"
+            />
           </div>
-          <button>
+          <button className="bg-orange-400 rounded-lg mt-4 py-2 text-white font-medium hover:bg-orange-500 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:outline-none">
             {method === "email" ? "Get login link" : null}
             {method === "phone" ? "Get one-time password" : null}
           </button>
         </form>
-        <div>
-          <div>
-            <div />
-            <div>
-              <span>Or enter with</span>
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute w-full border-t border-gray-200" />
+            <div className="relative -top-3  text-center">
+              <span className="bg-white px-2 text-sm">Or enter with</span>
             </div>
           </div>
-          <div>
-            <button>
+          <div className="grid grid-cols-2 mt-2 gap-3">
+            <button className="flex justify-center border-2 rounded-lg border-gray-300 py-2 text-gray-500 hover:text-black hover:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 ring-black">
               <svg
                 className="w-5 h-5"
                 aria-hidden="true"
@@ -71,7 +69,7 @@ const Enter = () => {
                 <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
               </svg>
             </button>
-            <button>
+            <button className="flex justify-center border-2 rounded-lg border-gray-300 py-2 text-gray-500 hover:text-black hover:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 ring-black">
               <svg
                 className="w-5 h-5"
                 aria-hidden="true"
