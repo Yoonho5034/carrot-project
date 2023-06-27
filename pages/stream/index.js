@@ -119,7 +119,7 @@ const live = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default live;
