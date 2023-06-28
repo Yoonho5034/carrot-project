@@ -4,7 +4,7 @@ import React from "react";
 
 const chats = () => {
   return (
-    <Layout title="채팅">
+    <Layout title="채팅" hasTabBar>
       <div className="divide-y-[1px] ">
         {[1, 1, 1, 1, 1, 1, 1].map((_, i) => (
           <Link href={`/chats/${i}`} key={i} legacyBehavior>

@@ -64,7 +64,7 @@ const NAVINFO = [
   },
   {
     title: "라이브",
-    ref: "/stream",
+    ref: "/live",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const NAVINFO = [
     ),
   },
   {
-    title: "나의 당근",
+    title: "나의 캐럿",
     ref: "/profile",
     svg: (
       <svg
@@ -127,7 +127,7 @@ const Layout = ({ title, canGoBack, hasTabBar, children }) => {
         <nav className="bg-white text-gray-800 border-t pb-2 fixed bottom-0  pt-3 flex justify-between items-center w-full max-w-lg px-4">
           {NAVINFO.map(({ title, svg, ref }, i) => {
             return (
-              <Link href={ref} key={i}>
+              <Link href={ref} key={i} legacyBehavior>
                 <div
                   className={`flex flex-col items-center space-y-2 cursor-pointer ${
                     router.pathname === ref && "text-orange-500"
