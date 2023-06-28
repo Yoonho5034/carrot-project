@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
 import Input from "../components/Input";
-import { cls } from "../libs/utils";
 
 const Enter = () => {
   const [method, setMethod] = React.useState("email");
@@ -16,23 +15,21 @@ const Enter = () => {
           <h5 className="text-sm text-gray-500 font-medium">Enter using:</h5>
           <div className="grid  border-b  w-full mt-8 grid-cols-2 ">
             <button
-              className={cls(
-                "pb-4 font-medium text-sm border-b-2",
+              className={`pb-4 font-medium text-sm border-b-2 ${
                 method === "email"
                   ? " border-orange-500 text-orange-400"
                   : "border-transparent hover:text-gray-400 text-gray-500"
-              )}
+              }`}
               onClick={onEmailClick}
             >
               Email
             </button>
             <button
-              className={cls(
-                "pb-4 font-medium text-sm border-b-2",
-                method === "phone"
+              className={`pb-4 font-medium text-sm border-b-2 ${
+                method === "email"
                   ? " border-orange-500 text-orange-400"
                   : "border-transparent hover:text-gray-400 text-gray-500"
-              )}
+              }`}
               onClick={onPhoneClick}
             >
               Phone
