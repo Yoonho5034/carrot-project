@@ -1,11 +1,16 @@
+import Button from "@/components/button";
+import Input from "@/components/input";
+import Layout from "@/components/layout";
+import TextArea from "@/components/textarea";
+
 const upload = () => {
   return (
-    <div className="px-4 py-10">
-      <div>
-        <div className="flex items-center justify-center border-4 border-dashed h-80 rounded-md text-gray-600 hover:text-orange-600">
-          <label>
+    <Layout canGoBack title="Upload Product">
+      <form className="p-4 space-y-4">
+        <div>
+          <label className="w-full cursor-pointer text-gray-600 hover:border-orange-500 hover:text-orange-500 flex items-center justify-center border-2 border-dashed border-gray-300 h-48 rounded-md">
             <svg
-              className="h-12 w-12 cursor-pointer"
+              className="h-12 w-12"
               stroke="currentColor"
               fill="none"
               viewBox="0 0 48 48"
@@ -18,41 +23,22 @@ const upload = () => {
                 strokeLinejoin="round"
               />
             </svg>
-
-            <input type="file" className="hidden" />
+            <input className="hidden" type="file" />
           </label>
         </div>
-      </div>
-      <div className="mt-4">
-        <label htmlFor="price">Price</label>
-        <div className="relative flex items-center">
-          <div className="absolute left-0 pl-2 pointer-events-none text-gray-500 font-bold">
-            <span>$</span>
-          </div>
-          <input
-            id="price"
-            type="text"
-            placeholder="0.00"
-            className="pl-6 w-full rounded-md pr-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-          />
-          <div className="absolute right-2 pointer-events-none text-gray-500 font-bold">
-            <span>USD</span>
-          </div>
-        </div>
-      </div>
-      <div className="mt-4">
-        <label className="mt-2">Description</label>
-        <div>
-          <textarea
-            rows={4}
-            className="w-full rounded-md  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-          />
-        </div>
-      </div>
-      <button className="mt-2 bg-orange-400 w-full border py-2 rounded-lg text-white font-bold hover:bg-orange-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-        Upload product
-      </button>
-    </div>
+        <Input required label="Name" name="name" type="text" />
+        <Input
+          required
+          label="Price"
+          placeholder="0.00"
+          name="price"
+          type="text"
+          kind="price"
+        />
+        <TextArea name="description" label="Description" />
+        <Button text="Upload item" />
+      </form>
+    </Layout>
   );
 };
 

@@ -1,24 +1,25 @@
 import Layout from "@/components/Layout";
+import Button from "@/components/button";
 
 const ItemDetail = () => {
   return (
     <Layout canGoBack>
-      <div className="px-4 py-10">
+      <div className="px-4  py-4">
         <div className="mb-8">
-          <div className="h-96 bg-stone-400" />
-          <div className="flex items-center space-x-4 mt-4 border-b pb-2 border-stone-400">
-            <div className=" w-12 h-12 rounded-full bg-stone-400" />
+          <div className="h-96 bg-slate-300" />
+          <div className="flex cursor-pointer py-3 border-t border-b items-center space-x-3">
+            <div className="w-12 h-12 rounded-full bg-slate-300" />
             <div>
-              <p className="text-stone-600 font-bold">Steve Jebs</p>
-              <p className="text-stone-400 text-sm font-medium cursor-pointer">
+              <p className="text-sm font-medium text-gray-700">Steve Jebs</p>
+              <p className="text-xs font-medium text-gray-500">
                 View profile &rarr;
               </p>
             </div>
           </div>
-          <div className="mt-4">
-            <h1 className="text-2xl font-bold ">Galaxy S50</h1>
-            <span className="text-3xl mt-2 block">$140</span>
-            <p className="text-base my-2">
+          <div className="mt-5">
+            <h1 className="text-3xl font-bold text-gray-900">Galaxy S50</h1>
+            <span className="text-2xl block mt-3 text-gray-900">$140</span>
+            <p className=" my-6 text-gray-700">
               My money&apos;s in that office, right? If she start giving me some
               bullshit about it ain&apos;t there, and we got to go someplace
               else and get it, I&apos;m gonna shoot you in the head then and
@@ -28,11 +29,9 @@ const ItemDetail = () => {
               in there, and that ni**a Winston or anybody else is in there, you
               the first motherfucker to get shot. You understand?
             </p>
-            <div className="flex items-center justify-between py-2 space-x-4">
-              <button className="flex-1 bg-orange-400 text-white py-2 rounded-lg hover:bg-orange-500 transition-colors text-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 ring-orange-500">
-                Talk to seller
-              </button>
-              <button>
+            <div className="flex items-center justify-between space-x-2">
+              <Button large text="Talk to seller" />
+              <button className="p-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                 <svg
                   className="h-6 w-6 "
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +52,13 @@ const ItemDetail = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-gray-600">Similar items</h2>
-          <div className="grid grid-cols-2 space-x-2">
+          <h2 className="text-2xl font-bold text-gray-900">Similar items</h2>
+          <div className=" mt-6 grid grid-cols-2 gap-4">
             {[1, 2, 3, 4, 5, 6].map((_, i) => (
-              <div key={i} className="mb-4">
-                <div className="h-56 w-full bg-gray-400 flex-col" />
-                <h3>Galaxy S60</h3>
-                <p>$6</p>
+              <div key={i}>
+                <div className="h-56 w-full mb-4 bg-slate-300" />
+                <h3 className="text-gray-700 -mb-1">Galaxy S60</h3>
+                <span className="text-sm font-medium text-gray-900">$6</span>
               </div>
             ))}
           </div>

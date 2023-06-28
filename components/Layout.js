@@ -103,7 +103,7 @@ const NAVINFO = [
   },
 ];
 
-const Layout = ({ title, canGoBack, hasTabBar = true, children }) => {
+const Layout = ({ title, canGoBack, hasTabBar, children }) => {
   const router = useRouter();
   const goToBack = () => {
     router.back();
