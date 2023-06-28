@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
-import FloatingButton from "../components/floating-button";
-import Item from "../components/item";
+import FloatingButton from "@/components/FloatingButton";
+import Item from "@/components/Item";
 
 const index = () => {
   return (

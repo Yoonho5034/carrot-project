@@ -1,5 +1,5 @@
 import Layout from "@components/Layout";
-import Message from "@components/message";
+import Message from "@components/Message";
 
 const liveDetail = () => {
   return (

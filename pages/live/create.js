@@ -1,7 +1,7 @@
-import Button from "@/components/button";
-import Input from "@/components/input";
+import Button from "@/components/Button";
+import Input from "@/components/Input";
 import Layout from "@/components/Layout";
-import TextArea from "@/components/textarea";
+import TextArea from "@/components/TextArea";
 
 const create = () => {
   return (
