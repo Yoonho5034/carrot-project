@@ -128,7 +128,11 @@ const Layout = ({ title, canGoBack, hasTabBar = true, children }) => {
           {NAVINFO.map(({ title, svg, ref }, i) => {
             return (
               <Link href={ref} key={i}>
-                <div className="flex flex-col items-center space-y-2 cursor-pointer">
+                <div
+                  className={`flex flex-col items-center space-y-2 cursor-pointer ${
+                    router.pathname === ref && "text-orange-500"
+                  }`}
+                >
                   {svg}
                   <span>{title}</span>
                 </div>
