@@ -1,36 +1,28 @@
+import Layout from "../../components/layout";
+import Message from "../../components/message";
+
 const ChatDeatil = () => {
   return (
-    <div className="px-4 py-10 space-y-4">
-      <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 rounded-full bg-gray-400" />
-        <div className="text-gray-600 font-semibold border p-2 rounded-md border-gray-500">
-          Hi how much are you selling them for?
-        </div>
-      </div>
-      <div className="flex flex-row-reverse items-center space-x-reverse space-x-2 ">
-        <div className="w-8 h-8 rounded-full bg-gray-400" />
-        <div className="text-gray-600 font-semibold border p-2 rounded-md border-gray-500">
-          I want ￦20,000
-        </div>
-      </div>
-      <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 rounded-full bg-gray-400" />
-        <div className="text-gray-600 font-semibold border p-2 rounded-md border-gray-500">
-          미쳤어
-        </div>
-      </div>
-      <div className="fixed w-full mx-auto max-x-md bottom-4 inset-x-0 px-4">
-        <div className="flex items-center relative ">
-          <input
-            type="text"
-            className="w-full rounded-full pr-8  focus:ring-orange-400 focus:outline-none focus:border-orange-400"
-          />
-          <div className="absolute right-2 bg-orange-400 px-2 rounded-full text-white hover:bg-orange-500">
-            <span>&rarr;</span>
+    <Layout canGoBack title="Steve">
+      <div className="py-10 pb-16 px-4 space-y-4">
+        <Message message="Hi how much are you selling them for?" />
+        <Message message="I want ￦20,000" reversed />
+        <Message message="미쳤어" />
+        <form className="fixed py-2 bg-white  bottom-0 inset-x-0">
+          <div className="flex relative max-w-md items-center  w-full mx-auto">
+            <input
+              type="text"
+              className="shadow-sm rounded-full w-full border-gray-300 focus:ring-orange-500 focus:outline-none pr-12 focus:border-orange-500"
+            />
+            <div className="absolute inset-y-0 flex py-1.5 pr-1.5 right-0">
+              <button className="flex focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 items-center bg-orange-500 rounded-full px-3 hover:bg-orange-600 text-sm text-white">
+                &rarr;
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
-    </div>
+    </Layout>
   );
 };
 
