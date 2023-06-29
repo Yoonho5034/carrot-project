@@ -1,55 +1,34 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const forms = () => {
-  const [userName, setUserName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-
-  const onChageValue = (type, e) => {
-    if (type === "text") {
-      setUserName(e.target.value);
-      return;
-    }
-    if (type === "email") {
-      setEmail(e.target.value);
-      return;
-    }
-    if (type === "password") {
-      setPassword(e.target.value);
-      return;
-    }
+  const { register, watch, handleSubmit } = useForm();
+  const onVaild = () => {
+    console.log("first");
   };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(userName, email, password, "userName, email, password");
-  };
+  // register : state 연결 (key ,value, onchange, ref)
+  // ...register([key],{})
+  // watch 로 보면 register key값으로 등록
   return (
-    <form>
+    <form onSubmit={handleSubmit(onVaild)}>
       <input
-        value={userName}
+        {...register("userName", { required: true })}
         type="text"
         placeholder="UserName"
-        onChange={(e) => onChageValue("text", e)}
-        required
       />
       <input
-        value={email}
         type="email"
+        {...register("email", { required: true })}
         placeholder="Email"
-        onChange={(e) => onChageValue("email", e)}
-        required
       />
       <input
-        value={password}
         type="password"
+        {...register("password", { required: true })}
         placeholder="Password"
-        onChange={(e) => onChageValue("password", e)}
-        required
       />
 
-      <input type="submit" value="submit" onClick={onSubmit} />
+      <input type="submit" value="submit" />
     </form>
   );
 };
