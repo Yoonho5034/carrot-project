@@ -15,7 +15,7 @@ import client from "@/libs/client";
 // }
 
 export default async function handler(req, res) {
-  await client.user.create({ data: { email: "hi@naver.com", name: "hi" } });
+  await client.user.create({ data: { email: "h1323@naver.com", name: "hi" } });
   res.json({
     ok: true,
     data: "xx",
