@@ -1,8 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Alert from "@/components/Alert";
-import Button from "../components/Button";
-import Input from "../components/Input";
 
 const LOGINTYPES = [
   {
